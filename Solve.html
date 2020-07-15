@@ -1,0 +1,177 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Coder Foundry MiniSite Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+
+        .soafClass {
+            border: 2px solid black;
+            font-weight: 700;
+        }
+
+        .soafButton {
+            border: 2px solid black;
+            font-weight: 700;
+        }
+
+
+        .btnWide {
+            width: 100%;
+            margin-top: 10px;
+            align-content: center;
+        }
+
+        hr.Sep {
+            height: 2px;
+            background-color: black;
+        }
+
+        #K {
+            color: orangered;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Index.html">Sum of All Fears</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Solve.html">Solve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//jasons-portfolio.netlify.app">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Sum of All Fears</h1>
+                <p class="lead">Description of the challenge</p>
+            </div>
+        </div>
+        <hr class="Sep" />
+        <div class="row">
+            <div class="col"><input class="form-control soafClass" id="K" placeholder="Enter K" /></div>
+            <div class="col"><input class="form-control soafClass" id="In1" placeholder="Number 1" /></div>
+            <div class="col"><input class="form-control soafClass" id="In2" placeholder="Number 2" /></div>
+            <div class="col"><input class="form-control soafClass" id="In3" placeholder="Number 3" /></div>
+            <div class="col"><input class="form-control soafClass" id="In4" placeholder="Number 4" /></div>
+            <div class="col"><input class="form-control soafClass" id="In5" placeholder="Number 5" /></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3"><button id="btnSoaf" class="btn btn-primary soafButton btnWide">Find Solution</button></div>
+            <div class="col-2"></div>
+            <div class="col-3"><button id="btnClear" class="btn btn-danger soafButton btnWide">Clear</button></div>
+            <div class="col-2"></div>
+        </div>
+
+        <hr class="Sep" />
+
+        <div class="row">
+            <div class="col"><h4 id="Out"></h4></div>
+        </div>
+
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <script>
+        $("#btnSoaf").on("click", function () {
+
+            //Step 1: Get the user data. parseInt() converts a string to a float point integer
+            let k = parseInt($("#K").val());
+            let num1 = parseInt($("#In1").val());
+            let num2 = parseInt($("#In2").val());
+            let num3 = parseInt($("#In3").val());
+            let num4 = parseInt($("#In4").val());
+            let num5 = parseInt($("#In5").val());
+
+            //Step 2: Create an array with the user info
+            let numList = [num1, num2, num3, num4, num5];
+
+            //Step 3: Perform the algo
+            let result = ``;
+
+
+            for (let i = 0; i < numList.length - 1; i++) {
+                if (numList[i] > k) {
+                    continue; // go to next number
+                }
+
+
+                let solution = k - numList[i]; // k minus the number at index i
+                if (numList.indexOf(solution, i + 1) > -1) // if solution found in the array of number, starting at index(i + 1)
+                {
+                    result = `A solution was found for a K value of ${k}`;
+                    break; // break out of if, return result
+                }
+                else {
+                    result = `No solution for a K value of ${k} was found`;
+                }
+
+            }
+
+            //Step 4: Print result to user
+            $("#Out").text(result);
+
+        });
+
+        $("#btnClear").on("click", function () {
+            $("#K").val("");
+            $("#In1").val("");
+            $("#In2").val("");
+            $("#In3").val("");
+            $("#In4").val("");
+            $("#In5").val("");
+            $("#Out").text("");
+        });
+
+    </script>
+</body>
+
+</html>
