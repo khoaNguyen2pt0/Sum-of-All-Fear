@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Coder Foundry MiniSite Template</title>
+    <title>Sum of All Fears</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -41,6 +41,7 @@
         #K {
             color: orangered;
         }
+
     </style>
 
 
@@ -49,7 +50,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
         <div class="container">
             <a class="navbar-brand" href="/Index.html">Sum of All Fears</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,23 +58,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Index.html">
                             Home
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/Solve.html">Solve</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Git</a>
+                        <a class="nav-link" target="_blank" href="//github.com/khoaNguyen2pt0/Sum-of-All-Fear.git">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//jasons-portfolio.netlify.app">Portfolio</a>
+                        <a class="nav-link" href="//khoanguyen-coderfoundry.netlify.app/">Portfolio</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -89,12 +91,12 @@
         </div>
         <hr class="Sep" />
         <div class="row">
-            <div class="col"><input class="form-control soafClass" id="K" placeholder="Enter K" /></div>
-            <div class="col"><input class="form-control soafClass" id="In1" placeholder="Number 1" /></div>
-            <div class="col"><input class="form-control soafClass" id="In2" placeholder="Number 2" /></div>
-            <div class="col"><input class="form-control soafClass" id="In3" placeholder="Number 3" /></div>
-            <div class="col"><input class="form-control soafClass" id="In4" placeholder="Number 4" /></div>
-            <div class="col"><input class="form-control soafClass" id="In5" placeholder="Number 5" /></div>
+            <div class="col"><input class="form-control soafClass" id="K" placeholder="Enter K" onblur="this.placeholder='K number'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input class="form-control soafClass" id="In1" placeholder="Number 1" onblur="this.placeholder='Number 1'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input class="form-control soafClass" id="In2" placeholder="Number 2" onblur="this.placeholder='Number 2'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input class="form-control soafClass" id="In3" placeholder="Number 3" onblur="this.placeholder='Number 3'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input class="form-control soafClass" id="In4" placeholder="Number 4" onblur="this.placeholder='Number 4'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input class="form-control soafClass" id="In5" placeholder="Number 5" onblur="this.placeholder='Number 5'" onfocus="this.placeholder=''" /></div>
         </div>
         <br />
         <div class="row">
