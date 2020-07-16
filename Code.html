@@ -66,66 +66,33 @@
                     <div class="row">
                         <div class="col-12">
                             <pre class="line-numbers">
-                            <code class="language-markup">
-                                   
-
-            &lt;body&gt;
-
-                &lt;div class="container" &gt;
-                    &lt;div class="row"&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-10 h1 text-center"&gt; FIZZBUZZ &lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
+                                <code class="language-markup">
 
 
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; Enter Fizz number: &lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; &lt;input id="input1" /&gt;&lt;/div&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;br /&gt;
-                            &lt;/div&gt;
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="K" placeholder="Enter K" onblur="this.placeholder='K number'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="In1" placeholder="Number 1" onblur="this.placeholder='Number 1'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="In2" placeholder="Number 2" onblur="this.placeholder='Number 2'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="In3" placeholder="Number 3" onblur="this.placeholder='Number 3'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="In4" placeholder="Number 4" onblur="this.placeholder='Number 4'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input class="form-control soafClass" id="In5" placeholder="Number 5" onblur="this.placeholder='Number 5'" onfocus="this.placeholder=''" /&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;br /&gt;
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                        &lt;div class="col-3"&gt;&lt;button id="btnSoaf" class="btn btn-primary soafButton btnWide"&gt;Find Solution&lt;/button&gt;&lt;/div&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                        &lt;div class="col-3"&gt;&lt;button id="btnClear" class="btn btn-danger soafButton btnWide"&gt;Clear&lt;/button&gt;&lt;/div&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
 
-                            &lt;br /&gt;
+                                    &lt;hr class="Sep" /&gt;
 
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; Enter Buzz number: &lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; &lt;input id="input2" /&gt;&lt;/div&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;br /&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col"&gt;&lt;h4 id="Out"&gt;&lt;/h4&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
 
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;h1&gt; &lt;/h1&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="container-md"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;button id="btn1" class="btn btn-primary btn-block txtWide" onclick="buzzIt()"&gt;
-                                Buzz It &lt;/button&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
 
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-12 txtWide"&gt;
-                                    &lt;h4 id="output1"&gt;&lt;/h4&gt;
-                                &lt;/div&gt;
-
-                            &lt;/div&gt;
-                        &lt;/div&gt;                                                                                                    
-            &lt;/body&gt;
-
-                               
 
 
                                 </code>
@@ -139,35 +106,58 @@
                         <div class="col-12">
                             <pre class="line-numbers">
                             <code class="language-js">
-                                 
-                            <script>
-                                function FizzBuzz(value1, value2) {
-                                    let returnValue = "";
-                                    for (let i = 1; i <= 100; i++) {
-                                        if (i % value1 == 0 && i % value2 == 0) {
-                                            returnValue += "FIZZBUZZOOKAH ";
-                                        }
-                                        else if (i % value1 == 0) {
-                                            returnValue += "fizz ";
-                                        }
-                                        else if (i % value2 == 0) {
-                                            returnValue += "buzz ";
-                                        }
-                                        else {
-                                            returnValue += `${i} `;
-                                        }
-                                    }
-                                    return returnValue;
-                                }
+                                <script>
+                                    $("#btnSoaf").on("click", function () {
 
-                                function buzzIt() {
-                                    let output = "";
-                                    let val1 = document.getElementById("input1").value;
-                                    let val2 = document.getElementById("input2").value;
-                                    output = FizzBuzz(val1, val2);
-                                    document.getElementById("output1").innerHTML = output;
+                                        //Step 1: Get the user data. parseInt() converts a string to a float point integer
+                                        let k = parseInt($("#K").val());
+                                        let num1 = parseInt($("#In1").val());
+                                        let num2 = parseInt($("#In2").val());
+                                        let num3 = parseInt($("#In3").val());
+                                        let num4 = parseInt($("#In4").val());
+                                        let num5 = parseInt($("#In5").val());
 
-                                }
+                                        //Step 2: Create an array with the user info
+                                        let numList = [num1, num2, num3, num4, num5];
+
+                                        //Step 3: Perform the algo
+                                        let result = ``;
+
+
+                                        for (let i = 0; i < numList.length - 1; i++) {
+                                            if (numList[i] > k) {
+                                                continue; // go to next number
+                                            }
+
+
+                                            let solution = k - numList[i]; // k minus the number at index i
+                                            if (numList.indexOf(solution, i + 1) > -1) // if solution found in the array of number, starting at index(i + 1)
+                                            {
+                                                result = `A solution was found for a K value of ${k}`;
+                                                break; // break out of if, return result
+                                            }
+                                            else {
+                                                result = `No solution for a K value of ${k} was found`;
+                                            }
+
+                                        }
+
+                                        //Step 4: Print result to user
+                                        $("#Out").text(result);
+
+                                    });
+
+                                    $("#btnClear").on("click", function () {
+                                        $("#K").val("");
+                                        $("#In1").val("");
+                                        $("#In2").val("");
+                                        $("#In3").val("");
+                                        $("#In4").val("");
+                                        $("#In5").val("");
+                                        $("#Out").text("");
+                                    });
+
+                                </script>
 </script>
                                 
                                 </code>

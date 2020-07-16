@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="soaf.jpg" />
     <Content Include="Solve%28draft%29.html" />
     <Content Include="Code.html" />
     <Content Include="CSS\prism.css" />
