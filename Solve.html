@@ -101,12 +101,12 @@
         <!----------------------------------------------------------------------------------->
         <!--INPUT-->
         <div class="row">
-            <div class="col"><input class="form-control soafClass" id="K" placeholder="Enter K" onblur="this.placeholder='K number'" onfocus="this.placeholder=''" /></div>
-            <div class="col"><input class="form-control soafClass" id="In1" placeholder="Number 1" onblur="this.placeholder='Number 1'" onfocus="this.placeholder=''" /></div>
-            <div class="col"><input class="form-control soafClass" id="In2" placeholder="Number 2" onblur="this.placeholder='Number 2'" onfocus="this.placeholder=''" /></div>
-            <div class="col"><input class="form-control soafClass" id="In3" placeholder="Number 3" onblur="this.placeholder='Number 3'" onfocus="this.placeholder=''" /></div>
-            <div class="col"><input class="form-control soafClass" id="In4" placeholder="Number 4" onblur="this.placeholder='Number 4'" onfocus="this.placeholder=''" /></div>
-            <div class="col"><input class="form-control soafClass" id="In5" placeholder="Number 5" onblur="this.placeholder='Number 5'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="K" placeholder="Enter K" onblur="this.placeholder='K number'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="In1" placeholder="Number 1" onblur="this.placeholder='Number 1'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="In2" placeholder="Number 2" onblur="this.placeholder='Number 2'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="In3" placeholder="Number 3" onblur="this.placeholder='Number 3'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="In4" placeholder="Number 4" onblur="this.placeholder='Number 4'" onfocus="this.placeholder=''" /></div>
+            <div class="col"><input type="text" onkeyup=numberOnly(this) class="form-control soafClass" id="In5" placeholder="Number 5" onblur="this.placeholder='Number 5'" onfocus="this.placeholder=''" /></div>
         </div>
         <br />
         <!--BUTTONS-->
@@ -183,6 +183,19 @@
             $("#In5").val("");
             $("#Out").text("");
         });
+
+        //PREVENT USER FROM TYPING IN NON-NUMBERS
+        function numberOnly(e) {
+            var validChars = /[0-9]/;
+            var strIn = e.value;
+            var strOut = '';
+            for (var i = 0; i < strIn.length; i++) {
+                strOut += (validChars.test(strIn.charAt(i))) ? strIn.charAt(i) : ''; // if strIn input doesn't include characters in validChars -> strIn char at i = '' (delete) 
+            } // charAt() is a method that returns the character from the specified index. 
+            // Characters in a string are indexed from left to right.
+            //The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.
+            e.value = strOut;
+        }
 
     </script>
 </body>
